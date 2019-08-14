@@ -8,8 +8,10 @@ Base directory for encryption zone :  /encrypt-test/TestDFSIO
 Base directory for non-encrypt dir : /no-encrypt-test/TestDFSIO
 
 ###Commands used : 
-```hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-mapreduce-client-jobclient-tests.jar TestDFSIO -D mapred.output.compress=false -Dtest.build.data=/encrypt-test/TestDFSIO -read -nrFiles 1 -fileSize 5GB -resFile result_dfsio_c3_write.log
-hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-mapreduce-client-jobclient-tests.jar TestDFSIO -D mapred.output.compress=false -Dtest.build.data=/encrypt-test/TestDFSIO -write -nrFiles 1 -fileSize 5GB -resFile result_dfsio_c3_write.log```
+```
+hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-mapreduce-client-jobclient-tests.jar TestDFSIO -D mapred.output.compress=false -Dtest.build.data=/encrypt-test/TestDFSIO -write -nrFiles 1 -fileSize 5GB -resFile result_write.log
+hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-mapreduce-client-jobclient-tests.jar TestDFSIO -D mapred.output.compress=false -Dtest.build.data=/encrypt-test/TestDFSIO -read -nrFiles 1 -fileSize 5GB -resFile result_read.log
+```
 
 
 Write file size : 1G
