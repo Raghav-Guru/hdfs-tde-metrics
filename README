@@ -1,0 +1,171 @@
+
+
+Test Environment: 
+
+Cluster size: 3 Nodes
+HDP version : 2.6.5
+Base directory for encryption zone :  /encrypt-test/TestDFSIO
+Base directory for non-encrypt dir : /no-encrypt-test/TestDFSIO
+
+###Commands used : 
+```hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-mapreduce-client-jobclient-tests.jar TestDFSIO -D mapred.output.compress=false -Dtest.build.data=/encrypt-test/TestDFSIO -read -nrFiles 1 -fileSize 5GB -resFile result_dfsio_c3_write.log
+hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-mapreduce-client-jobclient-tests.jar TestDFSIO -D mapred.output.compress=false -Dtest.build.data=/encrypt-test/TestDFSIO -write -nrFiles 1 -fileSize 5GB -resFile result_dfsio_c3_write.log```
+
+
+Write file size : 1G
+Read file size : 1G
+
+With Encryption : 
+
+19/08/14 21:15:20 INFO fs.TestDFSIO: ----- TestDFSIO ----- : write
+19/08/14 21:15:20 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:15:20 UTC 2019
+19/08/14 21:15:20 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:15:20 INFO fs.TestDFSIO: Total MBytes processed: 1024.0
+19/08/14 21:15:20 INFO fs.TestDFSIO:      Throughput mb/sec: 55.2319309600863
+19/08/14 21:15:20 INFO fs.TestDFSIO: Average IO rate mb/sec: 55.231929779052734
+19/08/14 21:15:20 INFO fs.TestDFSIO:  IO rate std deviation: 0.009746340993858418
+19/08/14 21:15:20 INFO fs.TestDFSIO:     Test exec time sec: 51.703
+19/08/14 21:15:20 INFO fs.TestDFSIO:
+
+
+
+19/08/14 21:18:33 INFO fs.TestDFSIO: ----- TestDFSIO ----- : read
+19/08/14 21:18:33 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:18:33 UTC 2019
+19/08/14 21:18:33 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:18:33 INFO fs.TestDFSIO: Total MBytes processed: 1024.0
+19/08/14 21:18:33 INFO fs.TestDFSIO:      Throughput mb/sec: 98.39531084846737
+19/08/14 21:18:33 INFO fs.TestDFSIO: Average IO rate mb/sec: 98.39530944824219
+19/08/14 21:18:33 INFO fs.TestDFSIO:  IO rate std deviation: 0.014236057680858066
+19/08/14 21:18:33 INFO fs.TestDFSIO:     Test exec time sec: 36.315
+19/08/14 21:18:33 INFO fs.TestDFSIO:
+
+
+
+Without encryption : 
+
+19/08/14 21:16:25 INFO fs.TestDFSIO: ----- TestDFSIO ----- : write
+19/08/14 21:16:25 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:16:25 UTC 2019
+19/08/14 21:16:25 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:16:25 INFO fs.TestDFSIO: Total MBytes processed: 1024.0
+19/08/14 21:16:25 INFO fs.TestDFSIO:      Throughput mb/sec: 169.93030202456023
+19/08/14 21:16:25 INFO fs.TestDFSIO: Average IO rate mb/sec: 169.9302978515625
+19/08/14 21:16:25 INFO fs.TestDFSIO:  IO rate std deviation: 0.022642973594400456
+19/08/14 21:16:25 INFO fs.TestDFSIO:     Test exec time sec: 34.25
+19/08/14 21:16:25 INFO fs.TestDFSIO:
+
+
+
+19/08/14 21:17:33 INFO fs.TestDFSIO: ----- TestDFSIO ----- : read
+19/08/14 21:17:33 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:17:33 UTC 2019
+19/08/14 21:17:33 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:17:33 INFO fs.TestDFSIO: Total MBytes processed: 1024.0
+19/08/14 21:17:33 INFO fs.TestDFSIO:      Throughput mb/sec: 1659.643435980551
+19/08/14 21:17:33 INFO fs.TestDFSIO: Average IO rate mb/sec: 1659.6434326171875
+19/08/14 21:17:33 INFO fs.TestDFSIO:  IO rate std deviation: 0.27097852495309643
+19/08/14 21:17:33 INFO fs.TestDFSIO:     Test exec time sec: 27.632
+19/08/14 21:17:33 INFO fs.TestDFSIO:
+
+======================================
+
+Write file size : 5G
+Read file size : 5G
+
+With encryption : 
+
+19/08/14 21:20:37 INFO fs.TestDFSIO: ----- TestDFSIO ----- : write
+19/08/14 21:20:37 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:20:37 UTC 2019
+19/08/14 21:20:37 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:20:37 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:20:37 INFO fs.TestDFSIO:      Throughput mb/sec: 120.60396202859633
+19/08/14 21:20:37 INFO fs.TestDFSIO: Average IO rate mb/sec: 120.60396575927734
+19/08/14 21:20:37 INFO fs.TestDFSIO:  IO rate std deviation: 0.012272527936751173
+19/08/14 21:20:37 INFO fs.TestDFSIO:     Test exec time sec: 68.249
+19/08/14 21:20:37 INFO fs.TestDFSIO:
+
+19/08/14 21:22:14 INFO fs.TestDFSIO: ----- TestDFSIO ----- : read
+19/08/14 21:22:14 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:22:14 UTC 2019
+19/08/14 21:22:14 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:22:14 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:22:14 INFO fs.TestDFSIO:      Throughput mb/sec: 134.22466902608468
+19/08/14 21:22:14 INFO fs.TestDFSIO: Average IO rate mb/sec: 134.22467041015625
+19/08/14 21:22:14 INFO fs.TestDFSIO:  IO rate std deviation: 0.020687316761184935
+19/08/14 21:22:14 INFO fs.TestDFSIO:     Test exec time sec: 65.84
+19/08/14 21:22:14 INFO fs.TestDFSIO:
+
+
+Without encryption : 
+
+19/08/14 21:24:02 INFO fs.TestDFSIO: ----- TestDFSIO ----- : write
+19/08/14 21:24:02 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:24:02 UTC 2019
+19/08/14 21:24:02 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:24:02 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:24:02 INFO fs.TestDFSIO:      Throughput mb/sec: 269.6297856653852
+19/08/14 21:24:02 INFO fs.TestDFSIO: Average IO rate mb/sec: 269.6297912597656
+19/08/14 21:24:02 INFO fs.TestDFSIO:  IO rate std deviation: 0.04719867812319592
+19/08/14 21:24:02 INFO fs.TestDFSIO:     Test exec time sec: 47.419
+19/08/14 21:24:02 INFO fs.TestDFSIO:
+
+
+19/08/14 21:24:59 INFO fs.TestDFSIO: ----- TestDFSIO ----- : read
+19/08/14 21:24:59 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:24:59 UTC 2019
+19/08/14 21:24:59 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:24:59 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:24:59 INFO fs.TestDFSIO:      Throughput mb/sec: 905.073360438395
+19/08/14 21:24:59 INFO fs.TestDFSIO: Average IO rate mb/sec: 905.0733642578125
+19/08/14 21:24:59 INFO fs.TestDFSIO:  IO rate std deviation: 0.13345802729930123
+19/08/14 21:24:59 INFO fs.TestDFSIO:     Test exec time sec: 31.184
+19/08/14 21:24:59 INFO fs.TestDFSIO:
+
+
+======================================
+
+Write file size : 10GB
+Read file size : 10GB
+
+Without encryption : 
+
+19/08/14 21:29:15 INFO fs.TestDFSIO: ----- TestDFSIO ----- : write
+19/08/14 21:29:15 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:29:15 UTC 2019
+19/08/14 21:29:15 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:29:15 INFO fs.TestDFSIO: Total MBytes processed: 10240.0
+19/08/14 21:29:15 INFO fs.TestDFSIO:      Throughput mb/sec: 187.02854742379134
+19/08/14 21:29:15 INFO fs.TestDFSIO: Average IO rate mb/sec: 187.02854919433594
+19/08/14 21:29:15 INFO fs.TestDFSIO:  IO rate std deviation: 0.03838960617333648
+19/08/14 21:29:15 INFO fs.TestDFSIO:     Test exec time sec: 85.747
+19/08/14 21:29:15 INFO fs.TestDFSIO:
+
+19/08/14 21:30:11 INFO fs.TestDFSIO: ----- TestDFSIO ----- : read
+19/08/14 21:30:11 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:30:11 UTC 2019
+19/08/14 21:30:11 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:30:11 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:30:11 INFO fs.TestDFSIO:      Throughput mb/sec: 1339.2623594036097
+19/08/14 21:30:11 INFO fs.TestDFSIO: Average IO rate mb/sec: 1339.2623291015625
+19/08/14 21:30:11 INFO fs.TestDFSIO:  IO rate std deviation: 0.19710265878067593
+19/08/14 21:30:11 INFO fs.TestDFSIO:     Test exec time sec: 31.367
+19/08/14 21:30:11 INFO fs.TestDFSIO:
+
+
+With encryption : 
+
+19/08/14 21:32:35 INFO fs.TestDFSIO: ----- TestDFSIO ----- : write
+19/08/14 21:32:35 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:32:35 UTC 2019
+19/08/14 21:32:35 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:32:35 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:32:35 INFO fs.TestDFSIO:      Throughput mb/sec: 97.96418184601255
+19/08/14 21:32:35 INFO fs.TestDFSIO: Average IO rate mb/sec: 97.96417999267578
+19/08/14 21:32:35 INFO fs.TestDFSIO:  IO rate std deviation: 0.009637809804726637
+19/08/14 21:32:35 INFO fs.TestDFSIO:     Test exec time sec: 80.685
+19/08/14 21:32:35 INFO fs.TestDFSIO:
+
+19/08/14 21:34:01 INFO fs.TestDFSIO: ----- TestDFSIO ----- : read
+19/08/14 21:34:01 INFO fs.TestDFSIO:            Date & time: Wed Aug 14 21:34:01 UTC 2019
+19/08/14 21:34:01 INFO fs.TestDFSIO:        Number of files: 1
+19/08/14 21:34:01 INFO fs.TestDFSIO: Total MBytes processed: 5120.0
+19/08/14 21:34:01 INFO fs.TestDFSIO:      Throughput mb/sec: 132.30657915137732
+19/08/14 21:34:01 INFO fs.TestDFSIO: Average IO rate mb/sec: 132.30657958984375
+19/08/14 21:34:01 INFO fs.TestDFSIO:  IO rate std deviation: 0.015723750864155214
+19/08/14 21:34:01 INFO fs.TestDFSIO:     Test exec time sec: 61.682
+19/08/14 21:34:01 INFO fs.TestDFSIO:
+
+
+
